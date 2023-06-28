@@ -71,6 +71,20 @@ function raizCuadrada(){
     
 }
 
+function botonNumeroAlazar(){
+    let botonRamdom  = buscarPorId('botonNumeroRandom');
+    
+    botonRamdom.addEventListener('click', function(){
+        let resultado = Math.random() * 10
+        let cajaResultado = buscarPorId('resultado');
+        cajaResultado.value = resultado
+    
+    })
+
+    
+}
+
+
 function configurandoEventListener(idBotonReferencia, evento, funcion){
     let botonDeReferenciaOperacion  = buscarPorId(idBotonReferencia);
 
@@ -79,7 +93,6 @@ function configurandoEventListener(idBotonReferencia, evento, funcion){
     })
 }
 
-
 function imprimirResultado(funcion) {
     let botonIgual = buscarPorId('botonIgual');
   
@@ -87,6 +100,45 @@ function imprimirResultado(funcion) {
   }
  
 
+function botonReset(){
+    let elementoBotonReset = buscarPorId('reset')
+
+    elementoBotonReset.addEventListener('click', function(){
+        location.reload();    })
+}
+
+function redondearHaciaArriba() {
+    let botonRedondearHaciaArriba = buscarPorId('botonCeil');
+  
+    botonRedondearHaciaArriba.addEventListener('click', function() {
+      let cajaResultado = buscarPorId('resultado');
+      let resultado = parseFloat(cajaResultado.value);
+      let resultadoRedondeado = Math.ceil(resultado);
+      cajaResultado.value = resultadoRedondeado;
+    });
+  }
+
+function redondearHaciaArriba() {
+    let botonRedondearHaciaArriba = buscarPorId('botonCeil');
+  
+    botonRedondearHaciaArriba.addEventListener('click', function() {
+      let cajaResultado = buscarPorId('resultado');
+      let resultado = parseFloat(cajaResultado.value);
+      let resultadoRedondeado = Math.ceil(resultado);
+      cajaResultado.value = resultadoRedondeado;
+    });
+  }
+
+function redondearHaciaAbajo() {
+    let botonRedondearHaciaAbajo = buscarPorId('botonFloor');
+  
+    botonRedondearHaciaAbajo.addEventListener('click', function() {
+      let cajaResultado = buscarPorId('resultado');
+      let resultado = parseFloat(cajaResultado.value);
+      let resultadoRedondeado = Math.floor(resultado);
+      cajaResultado.value = resultadoRedondeado;
+    });
+  }
 
 
 
@@ -96,6 +148,9 @@ configurandoEventListener('botonMultiplicar', 'click', multiplicar);
 configurandoEventListener('botonDividir', 'click', divicion);
 configurandoEventListener('botonPotencia', 'click', potencia);
 configurandoEventListener('botonRaizCuadra', 'click', raizCuadrada);
+botonNumeroAlazar()
+redondearHaciaArriba()
+redondearHaciaAbajo()
 
 confuguracionBotones('botonSumar')
 confuguracionBotones('botonRestar')
@@ -103,7 +158,6 @@ confuguracionBotones('botonMultiplicar')
 confuguracionBotones('botonDividir')
 confuguracionBotones('botonRaizCuadra')
 
-
-
+botonReset()
 
 

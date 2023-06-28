@@ -232,3 +232,18 @@ h1{
     color: gold;
     box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
 }
+
+.reset{
+    padding: 15px;
+    margin: 10px;
+    color: black;
+    background-color: rgba(128, 128, 128, 1);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer; 
+}
+
+.reset:hover{
+    color: gold;
+    box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.3);
+}
